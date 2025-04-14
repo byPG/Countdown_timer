@@ -21,15 +21,14 @@ const countDown = () => {
     const seconds = Math.floor(totalSeconds) % 60;
 
 
-daysEl.innerHTML = days;
-hoursEl.innerHTML = hours;
-minutesEL.innerHTML = minutes;
-secondsEl.innerHTML = seconds;
+daysEl.innerHTML = formatTime(days);
+hoursEl.innerHTML = formatTime(hours);
+minutesEL.innerHTML = formatTime(minutes);
+secondsEl.innerHTML = formatTime(seconds);}
 
 
-    console.log(days, hours, minutes, seconds);
+function formatTime(time){
+    return time < 10 ? (`0${time}`) : time;
 }
 
 countDown();
-
-setInterval(countDown, 1000)
